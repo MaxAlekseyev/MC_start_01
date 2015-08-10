@@ -1,0 +1,10 @@
+@import "../core/_vars";
+@import "../core/_mixins";
+
+/* BLOCK */
+
+$BLOCK: 'BLOCKNAME';
+
+#{$BLOCK}{
+
+}

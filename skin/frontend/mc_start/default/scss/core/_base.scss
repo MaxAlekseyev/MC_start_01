@@ -1,0 +1,99 @@
+@import "_vars";
+@import "_mixins";
+/* Basic styles */
+
+html{
+  font-size: $base-font-size;
+}
+body{
+  text-align: center;
+  background: #faf4f2;
+  margin: 0;
+  font: normal normal $base-font-size $base_font;
+  border-top: 4px solid $brown;
+  color: #636363;
+  padding: 0 1%;
+}
+
+/*-- Fonts --*/
+
+/*
+  Open Sans Styles
+  Light - 300
+  Normal - 400
+  Medium - 500
+  Semi-Bold - 600
+  Bold - 700
+  Extra-Bold - 800
+ */
+
+@font-face{
+  @include font-family(vollkornregular, vollkorn-regular-webfont, 400);
+}
+@font-face{
+  @include font-family(vollkornmedium, vollkorn-regular-webfont, 500);
+}
+@font-face{
+  @include font-family(vollkornsemibold, vollkorn-semibold-webfont, 600);
+}
+@font-face{
+  @include font-family(vollkornbold, vollkorn-bold-webfont, 700);
+}
+
+strong{
+  font-weight: 700;
+}
+strong.extra{
+  font-weight: 800;
+}
+strong.medium{
+  font-weight: 600;
+}
+
+// Alert blocks
+
+$success: #3c7646;
+$neutral: #555;
+$info: #2b627e;
+$warning: #735d32;
+$error: #a94442;
+
+.alert{
+  font-size: 2em;
+  text-align: left;
+  padding: 15px 20px;
+  border-style: solid;
+  border-width: 1px;
+  @include border-radius();
+  margin: 10px;
+}
+.success{
+  color: $success;
+  background-color: lighten($success, 50%);
+  border-color: $success;
+}
+.neutral{
+  color: $neutral;
+  background-color: lighten($neutral, 60%);
+  border-color: $neutral;
+}
+.info{
+  color: $info;
+  background-color: lighten($info, 55%);
+  border-color: $info;
+}
+.warning{
+  color: $warning;
+  background-color: lighten($warning, 55%);
+  border-color: $warning;
+}
+.error{
+  color: $error;
+  background-color: lighten($error, 45%);
+  border-color: $error;
+}
+.wrapper{
+  max-width: 1199px;
+  margin: 0 auto;
+  text-align: left;
+}

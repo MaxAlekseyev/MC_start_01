@@ -1,0 +1,21 @@
+@import "../core/_vars";
+@import "../core/_mixins";
+$BLOCK: 'header';
+
+/* Header */
+
+#{$BLOCK}{
+
+  background: url("../images/header/header_bg_01.png") repeat-x 0 100%;
+
+  .logo{
+    display: block;
+    width: 30.78%;
+    margin: 0 auto;
+  }
+
+
+}
+
+
+

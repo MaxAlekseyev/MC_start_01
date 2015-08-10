@@ -1,7 +1,8 @@
-# MC_start_01
-MC_start_01 project
+# MC_startz01
+----
+###MC_start_01 project
 
-Company: Magecore<br />
-Team lead: Vladimir Eremenko<br />
-Developer: Max Alekseyev
+**Company**: Magecore<br />
+**Team lead**: Vladimir Eremenko<br />
+**Developer**: Max Alekseyev
 

@@ -1,0 +1,83 @@
+@import "../core/_vars";
+@import "../core/_mixins";
+$BLOCK: '.main-nav';
+
+#{$BLOCK}{
+
+  border-bottom: 1px solid $light_brown;
+  display: inline-block;
+  width: 100%;
+
+  & > ul{
+    float: left;
+    width: 100%;
+    //display: table;
+
+    & > li{
+      text-align: center;
+      width: calc(100% / 6);
+      float: left;
+      position: relative;
+
+      /* Popup*/
+
+      ul{
+        display: none;
+        position: absolute;
+        z-index: 10;
+        background: #fff;
+        left: 15px;
+        margin-top: -5px;
+        min-width: 190px;
+        border: 1px solid darken($body_color, 10%);
+
+        li{
+          width: 100%;
+          border-bottom: 1px solid darken($body_color, 10%);
+          &:last-child{
+            border: 0;
+          }
+        }
+        a{
+          display: block;
+          text-transform: capitalize;
+          padding: 7px 30px 7px 11px;
+          text-align: left;
+          white-space: nowrap;
+          background: lighten($body_color, 2%);
+          &:hover{
+            color: #000000;
+            background: darken($body_color, 3%);
+          }
+        }
+
+      }
+
+      a{
+
+        color: #636363;
+        text-decoration: none;
+        display: inline-block;
+        @include rem(15);
+        text-transform: uppercase;
+        padding: 11px 0 13px;
+        font-family: $font_fan;
+        word-spacing: 3px;
+
+        &:hover{
+          color: #111;
+        }
+
+      }
+      &.menu > a{
+        background: url("#{$img}/header/favs_arr.gif") no-repeat 100% 40%;
+        padding-right: 16px;
+      }
+      &:hover ul{
+        display: block;
+      }
+    }
+  }
+
+}
+

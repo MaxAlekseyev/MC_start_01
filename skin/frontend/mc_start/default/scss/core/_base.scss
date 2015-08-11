@@ -1,5 +1,6 @@
 @import "_vars";
 @import "_mixins";
+
 /* Basic styles */
 
 html{
@@ -7,7 +8,7 @@ html{
 }
 body{
   text-align: center;
-  background: #faf4f2;
+  background: $body_color;
   margin: 0;
   font: normal normal $base-font-size $base_font;
   border-top: 4px solid $brown;
@@ -96,4 +97,6 @@ $error: #a94442;
   max-width: 1199px;
   margin: 0 auto;
   text-align: left;
+  display: inline-block;
+  width: 100%;
 }

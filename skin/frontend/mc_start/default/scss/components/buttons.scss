@@ -1,0 +1,21 @@
+@import "../core/_vars";
+@import "../core/_mixins";
+
+$BLOCK: '.btn';
+
+#{$BLOCK}{
+
+  background: #7ea6a4;
+  color: #ffffff;
+  @include rem(14);
+  @include border-radius(5px);
+  font-family: $font_voll;
+  padding: 12px 24px;
+  border: 0;
+  @include transition();
+  &:hover{
+    background: #2e83ac;
+  }
+
+}
+

@@ -1,0 +1,46 @@
+@import "../core/_vars";
+@import "../core/_mixins";
+/* BLOCK */
+
+$BLOCK: 'אשךü';
+
+#{$BLOCK}{
+
+}
+.rounded-input{
+
+  width: 100%;
+  @include border-radius(10px);
+  @include box-sizing();
+  border: 2px solid #ebe0d8;
+  padding: 3px;
+  @include transition();
+
+  input{
+
+    @include border-radius(7px);
+    @include box-sizing();
+    border: 1px solid #e6d6cd;
+    width: 100%;
+    color: #acacac;
+    font-family: $font_voll;
+    @include rem(14);
+    height: 42px;
+    padding: 13px 15px 13px 34px;
+    background: #fff9f7 url("#{$img}/header/search_lens.png") no-repeat 9px 50%;
+    @include transition();
+
+    &.focus{
+      color: #636363;
+    }
+
+  }
+  &:hover{
+    border-color: #2e83ac;
+    input{
+      border-color: #2e83ac;
+    }
+  }
+}
+
+

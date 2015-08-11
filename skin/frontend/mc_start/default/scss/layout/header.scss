@@ -6,14 +6,26 @@ $BLOCK: 'header';
 
 #{$BLOCK}{
 
-  background: url("../images/header/header_bg_01.png") repeat-x 0 100%;
+  background: url("#{$img}/header/header_bg_01.png") repeat-x 0 100%;
 
   .logo{
+
     display: block;
     width: 30.78%;
     margin: 0 auto;
-  }
+    background: url("#{$img}/header/logo_big_hvr.png") no-repeat 50% 0;
+    //background: url("#{$img}/header/logo_big_hvr.png") no-repeat 0 0;
+    background-size: 100% auto;
 
+    img{
+      opacity: 1;
+      @include transition();
+    }
+    &:hover img{
+      opacity: 0.005;
+    }
+
+  }
 
 }
 

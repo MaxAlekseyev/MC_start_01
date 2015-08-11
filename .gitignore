@@ -23,5 +23,6 @@
 /working
 
 # Files
+images/tmp
 *.psd
 *.bak

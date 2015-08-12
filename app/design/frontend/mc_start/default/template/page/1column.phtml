@@ -42,12 +42,17 @@
 <?php echo $this->getChildHtml('head') ?>
 </head>
 <body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
+
 <?php echo $this->getChildHtml('after_body_start') ?>
+
 <div class="wrapper">
-    <?php echo $this->getChildHtml('global_notices') ?>
-    <div class="page">
+
+    <?php // echo $this->getChildHtml('global_notices') ?>
+    <!-- 1 col -->
+
         <?php echo $this->getChildHtml('header') ?>
-        <div class="main-container col1-layout">
+
+        <section class="content col1-layout">
             <div class="main">
                 <?php echo $this->getChildHtml('breadcrumbs') ?>
                 <div class="col-main">
@@ -55,13 +60,19 @@
                     <?php echo $this->getChildHtml('content') ?>
                 </div>
             </div>
-        </div>
-        <?php echo $this->getChildHtml('footer_before') ?>
-        <?php echo $this->getChildHtml('footer') ?>
-        <?php echo $this->getChildHtml('global_cookie_notice') ?>
-        <?php echo $this->getChildHtml('before_body_end') ?>
-    </div>
+        </section>
+
 </div>
+
+<br><br><br><br>
+
+
+
+<?php echo $this->getChildHtml('footer_before') ?>
+<?php echo $this->getChildHtml('footer') ?>
+<?php echo $this->getChildHtml('global_cookie_notice') ?>
+<?php echo $this->getChildHtml('before_body_end') ?>
+
 <?php echo $this->getAbsoluteFooter() ?>
 </body>
 </html>

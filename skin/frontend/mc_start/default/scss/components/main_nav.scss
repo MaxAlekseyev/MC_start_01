@@ -5,19 +5,38 @@ $BLOCK: '.main-nav';
 #{$BLOCK}{
 
   border-bottom: 1px solid $light_brown;
-  display: inline-block;
+  //display: inline-block;
+  display: table;
   width: 100%;
 
   & > ul{
-    float: left;
+    //float: left;
     width: 100%;
     //display: table;
+    display: table-row;
 
     & > li{
       text-align: center;
-      width: calc(100% / 6);
-      float: left;
+      //width: calc(100% / 6);
+      //float: left;
+      display: table-cell;
       position: relative;
+    li{
+      position: relative;
+      &.level0.parent{
+        ul{
+          display: none;
+          left: 90%;
+          right: 0;
+          margin-top: -20px;
+        }
+        &:hover{
+          ul{
+            display: block;
+          }
+        }
+      }
+    }
 
       /* Popup*/
 
@@ -26,10 +45,11 @@ $BLOCK: '.main-nav';
         position: absolute;
         z-index: 10;
         background: #fff;
-        left: 15px;
+        left: 25px;
         margin-top: -5px;
         min-width: 190px;
         border: 1px solid darken($body_color, 10%);
+        @include box-shadow(1px 1px 0 0 rgba(0,0,0,0.3));
 
         li{
           width: 100%;
@@ -60,7 +80,7 @@ $BLOCK: '.main-nav';
         display: inline-block;
         @include rem(15);
         text-transform: uppercase;
-        padding: 11px 0 13px;
+        padding: 12px 0 13px;
         font-family: $font_fan;
         word-spacing: 3px;
 

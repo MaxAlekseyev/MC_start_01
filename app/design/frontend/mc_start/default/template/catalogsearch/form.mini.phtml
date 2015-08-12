@@ -23,18 +23,20 @@
  * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
+/* @var $this Mage_Core_Block_Template */
+/* @var $catalogSearchHelper Mage_Catalogsearch_Helper_Data */
+$catalogSearchHelper =  $this->helper('catalogsearch');
 ?>
-<?php
-/**
- * Top menu for store
- *
- * @see Mage_Page_Block_Html_Topmenu
- */
-?>
-<?php $_menu = $this->getHtml('level-top') ?>
 
-<?php if($_menu): ?>
-  <ul class="shop-menu">
-      <?php echo $_menu ?>
-  </ul>
-<?php endif ?>
+<form id="search_mini_form" action="<?php echo $catalogSearchHelper->getResultUrl() ?>" method="get">
+  <div class="rounded-input">
+    <input id="search" type="search" name="<?php echo $catalogSearchHelper->getQueryParamName() ?>" value="Search our products" class="input-text required-entry" maxlength="<?php echo $catalogSearchHelper->getMaxQueryLength();?>" />
+  </div>
+  <div id="search_autocomplete" class="search-autocomplete"></div>
+  <script type="text/javascript">
+  //<![CDATA[
+      var searchForm = new Varien.searchForm('search_mini_form', 'search', '');
+      searchForm.initAutocomplete('<?php echo $catalogSearchHelper->getSuggestUrl() ?>', 'search_autocomplete');
+  //]]>
+  </script>
+</form>

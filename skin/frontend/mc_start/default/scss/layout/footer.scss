@@ -1,27 +1,33 @@
 @import "../core/_vars";
 @import "../core/_mixins";
-
 $BLOCK: 'footer';
 
 #{$BLOCK}{
 
   border-top: 1px solid $light_brown;
-  padding-top: 28px;
+  padding-top: 15px;
+  margin-bottom: 12px;
+
+  .wrapper{
+    padding-bottom: 45px;
+    border-bottom: 1px solid $light_brown;
+  }
 
   .footer-links{
 
     width: 67%;
 
-    &>li{
+    & > li{
       float: left;
       width: 18%;
       margin-right: 7%;
     }
-    & ul{}
+    & ul{
+    }
     & li li{
       @include rem(14);
       margin-bottom: 6px;
-      
+
     }
     a{
 
@@ -35,34 +41,45 @@ $BLOCK: 'footer';
 
     }
   }
-    h3{
-      color: #636363;
-      text-transform: uppercase;
-      border-bottom: 1px solid $light_brown;
-      padding-bottom: 5px;
-      font-family: $font_fan;
-      margin-bottom: 5px;
-      @include rem(14);
-    }
+  h3{
+    color: #636363;
+    text-transform: uppercase;
+    border-bottom: 1px solid $light_brown;
+    padding-bottom: 5px;
+    padding-left: 3px;
+    font-family: $font_fan;
+    margin-bottom: 5px;
+    @include rem(14);
+    @include transition();
+  }
 
 }
-
 .footer-right-block{
-    float: right;
-    width: 32.1%;
+  float: right;
+  width: 32.1%;
+  @extend .clearfix;
 
-    h3{
-      border: 0;
-      margin-bottom: 2px;
-    }
-  .subscribe{
+  h3{
+    border: 0;
+    margin-bottom: 2px;
+  }
+  .subscribe-me{
     input{
       padding-left: 15px;
     }
     .btn{
       float: left;
       position: relative;
-      top: 5px;
+      top: 3px;
+    }
+    &:hover{
+      .rounded-input, .rounded-input *{
+        border-color: #2e83ac;
+      }
+      h3{
+        color: #1d5974;
+        //color: #2e83ac;
+      }
     }
   }
   .rounded-input{
@@ -74,4 +91,9 @@ $BLOCK: 'footer';
     }
   }
 }
-
+.copyright{
+  margin-bottom: 20px;
+  text-align: center;
+  @include rem(13);
+  color: #898989;
+}

@@ -24,9 +24,28 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<div class="footer-container">
-    <div class="footer">
-        <?php echo $this->getChildHtml() ?>
-        <address class="copyright"><?php echo $this->getCopyright() ?></address>
+
+<!--  Footer -->
+<footer>
+  <div class="wrapper">
+
+    <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_links')->toHtml(); ?>
+    <!-- right block-->
+    <div class="footer-right-block">
+      <div class="subscribe">
+          <?php echo $this->getChildHtml('newsletter'); ?>
+      </div>
     </div>
+
+  </div>
+
+</footer>
+
+<div class="copyright">
+  <?php echo Mage::getStoreConfig('general/store_information/name'); ?> -
+  <?php echo Mage::getStoreConfig('general/store_information/address'); ?> -
+  <?php echo Mage::getStoreConfig('general/store_information/phone'); ?>&nbsp;&nbsp;&nbsp;
+  <?php echo $this->getCopyright() ?>
 </div>
+
+<?php // echo $this->getChildHtml() ?>

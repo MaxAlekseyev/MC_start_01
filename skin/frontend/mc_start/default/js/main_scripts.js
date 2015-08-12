@@ -3,13 +3,12 @@ var j = jQuery.noConflict();
 
 
 j(document).ready(function(){
-
-  j(".rounded-input input[type=text]").click(function(){
+  j(".rounded-input input[type=text], .rounded-input input[type=search], .rounded-input input[type=email]").click(function(){
     var form_val = j(this).val();
     j(this).val("").addClass("focus");
   });
   
-  j(".rounded-input input[type=text]").blur(function(){
+  j(".rounded-input input[type=text], .rounded-input input[type=search], .rounded-input input[type=email]").blur(function(){
     var start_val = j(this).attr("value");
     var this_val = j(this).val()
     if(this_val == ""){

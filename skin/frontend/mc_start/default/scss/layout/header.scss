@@ -7,6 +7,7 @@ $BLOCK: 'header';
 #{$BLOCK}{
 
   background: url("#{$img}/header/header_bg_01.png") repeat-x 0 100%;
+  @extend .clearfix;
 
   .logo{
 
@@ -16,6 +17,10 @@ $BLOCK: 'header';
     background: url("#{$img}/header/logo_big_hvr.png") no-repeat 50% 0;
     //background: url("#{$img}/header/logo_big_hvr.png") no-repeat 0 0;
     background-size: 100% auto;
+    max-width: 10000px;
+    min-height: 0;
+    padding: 0;
+    float: none;
 
     img{
       opacity: 1;
@@ -27,6 +32,10 @@ $BLOCK: 'header';
 
   }
 
+}
+
+#header{
+  display: none;
 }
 
 

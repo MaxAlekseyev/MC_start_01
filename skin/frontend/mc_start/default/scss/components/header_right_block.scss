@@ -2,89 +2,85 @@
 @import "../core/_mixins";
 /* BLOCK */
 
-$BLOCK: '.header-right';
+$BLOCK: ".header-right";
 
-#{$BLOCK}{
-
+#{$BLOCK} {
   float: right;
   width: 30%;
   min-width: 360px;
 
-  .acc-links{
-
-    float: right;
-    padding-top: 10px;
-    margin-bottom: 45px;
-
+  .acc-links {
     @extend .clearfix;
 
-    a{
+    float: right;
+    margin-bottom: 45px;
+    padding-top: 10px;
+
+    a {
       @include rem(14);
     }
-    li{
+    li {
       float: left;
-      &:first-child{
-        border-right: 1px solid #e4d6cd;
-        padding-right: 10px;
+      &:first-child {
         margin-right: 10px;
+        padding-right: 10px;
+        border-right: 1px solid #e4d6cd;
       }
     }
   }
-  .favs-bag{
-
+  .favs-bag {
     float: right;
 
-    li{
+    li {
       float: left;
-      &:first-child{
+      &:first-child {
         margin-right: 20px;
       }
     }
-    a{
+    a {
       @include rem(15);
       @include box-sizing();
+
       height: 43px;
-      padding-left: 56px;
       padding-top: 5px;
-      span{
+      padding-left: 56px;
+      span {
+        display: block;
+        padding: 6px 17px 8px 0;
         border-top: 1px solid #e3d3c7;
         border-bottom: 1px solid #e3d3c7;
-        display: block;
         background: url("#{$img}/header/favs_arr.gif") no-repeat 100% 50%;
-        padding: 6px 17px 8px 0;
       }
-      &:hover span{
+      &:hover span {
         //border-color: #c3c036;
         //border-color: #7abdb2;
         //border-color: #c8c537;
         border-color: #338fb9;
       }
     }
-  em{
-    font-style: normal;
+    em {
+      font-style: normal;
+    }
   }
-  }
-  .favs a{
+  .favs a {
     background: url("#{$img}/header/right_block_icons_06.gif") no-repeat 0 0;
-    &:hover{
+    &:hover {
       background-position: 0 -100px;
     }
   }
-  .bag a{
+  .bag a {
     background: url("#{$img}/header/right_block_icons_06.gif") no-repeat 0 -200px;
-    &:hover{
+    &:hover {
       background-position: 0 -300px;
     }
   }
 
-  a{
+  a {
+    display: block;
     color: #636363;
     text-decoration: none;
-    display: block;
-    &:hover{
+    &:hover {
       color: #000;
     }
   }
-
 }
-

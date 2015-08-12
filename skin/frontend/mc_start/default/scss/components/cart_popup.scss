@@ -1,12 +1,13 @@
 @import "../core/_vars";
 @import "../core/_mixins";
-$BLOCK: ".btn";
+$BLOCK: ".mc-cart";
 
 #{$BLOCK} {
   @include rem(14);
   @include border-radius(5px);
   @include transition();
 
+  display: none;
   padding: 12px 24px;
   border: 0;
   color: #fff;

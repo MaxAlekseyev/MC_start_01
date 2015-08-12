@@ -1,0 +1,26 @@
+@import "../core/_vars";
+@import "../core/_mixins";
+/* BLOCK */
+
+$BLOCK: '.home-block';
+
+#{$BLOCK}{
+  //border-bottom: 1px solid $brown;
+  padding-bottom: 0;
+  margin-bottom: 25px;
+  border-bottom: 1px solid $light_brown;
+
+  h2{
+    color: #ac572e;
+    @include rem(36);
+    margin-bottom: 5px;
+    padding-left: 10px;
+  }
+  img{
+    @include border-radius(10px);
+    margin-bottom: 15px;
+  }
+
+}
+
+

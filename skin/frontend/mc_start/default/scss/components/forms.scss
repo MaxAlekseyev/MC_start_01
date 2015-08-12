@@ -2,7 +2,7 @@
 @import "../core/_mixins";
 /* BLOCK */
 
-$BLOCK: 'אשךü';
+$BLOCK: 'form';
 
 #{$BLOCK}{
 
@@ -16,6 +16,7 @@ $BLOCK: 'אשךü';
   padding: 3px;
   @include transition();
 
+  //input, #search{
   input{
 
     @include border-radius(7px);
@@ -41,6 +42,12 @@ $BLOCK: 'אשךü';
       border-color: #2e83ac;
     }
   }
+  label{
+    display: none;
+  }
+}
+#search{
+  font-family: $font_voll;
 }
 
 

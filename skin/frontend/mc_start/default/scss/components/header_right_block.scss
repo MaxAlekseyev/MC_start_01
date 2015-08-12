@@ -1,0 +1,86 @@
+@import "../core/_vars";
+@import "../core/_mixins";
+/* BLOCK */
+
+$BLOCK: ".header-right";
+
+#{$BLOCK} {
+  float: right;
+  width: 30%;
+  min-width: 360px;
+
+  .acc-links {
+    @extend .clearfix;
+
+    float: right;
+    margin-bottom: 45px;
+    padding-top: 10px;
+
+    a {
+      @include rem(14);
+    }
+    li {
+      float: left;
+      &:first-child {
+        margin-right: 10px;
+        padding-right: 10px;
+        border-right: 1px solid #e4d6cd;
+      }
+    }
+  }
+  .favs-bag {
+    float: right;
+
+    li {
+      float: left;
+      &:first-child {
+        margin-right: 20px;
+      }
+    }
+    a {
+      @include rem(15);
+      @include box-sizing();
+
+      height: 43px;
+      padding-top: 5px;
+      padding-left: 56px;
+      span {
+        display: block;
+        padding: 6px 17px 8px 0;
+        border-top: 1px solid #e3d3c7;
+        border-bottom: 1px solid #e3d3c7;
+        background: url("#{$img}/header/favs_arr.gif") no-repeat 100% 50%;
+      }
+      &:hover span {
+        //border-color: #c3c036;
+        //border-color: #7abdb2;
+        //border-color: #c8c537;
+        border-color: #338fb9;
+      }
+    }
+    em {
+      font-style: normal;
+    }
+  }
+  .favs a {
+    background: url("#{$img}/header/right_block_icons_06.gif") no-repeat 0 0;
+    &:hover {
+      background-position: 0 -100px;
+    }
+  }
+  .bag a {
+    background: url("#{$img}/header/right_block_icons_06.gif") no-repeat 0 -200px;
+    &:hover {
+      background-position: 0 -300px;
+    }
+  }
+
+  a {
+    display: block;
+    color: #636363;
+    text-decoration: none;
+    &:hover {
+      color: #000;
+    }
+  }
+}

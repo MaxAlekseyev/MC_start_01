@@ -1,4 +1,140 @@
 <?xml version="1.0"?>
-<theme>
-    <parent>rwd/default</parent>
-</theme>
+<!-- this sucker just opens the doc -->
+<!--
+/**
+ * local.xml
+ *
+ * Local layout modifications for our local theme
+ *
+ * @category    design
+ * @package     MC start (test task)
+ * @copyright   Magecore
+ */
+-->
+<layout version="0.1.0">
+    <!-- Default -->
+    <default>
+        <reference name="head">
+
+            <action method="removeItem"><type>js</type><name>lib/jquery/jquery-1.10.2.min.js</name></action>
+            <action method="removeItem">
+                <rel>link_rel</rel>
+                <href>//fonts.googleapis.com/css?family=Raleway:300,400,500,700,600</href>
+            </action>
+            <action method="addLinkRel"><rel>stylesheet</rel><href>//fonts.googleapis.com/css?family=Fanwood+Text</href></action>
+            <action method="addItem"> <type>skin_js</type> <name>js/jquery-1.11.3.min.js</name> </action>
+            <action method="addItem"> <type>skin_js</type> <name>js/main_scripts.js</name> </action>
+            <action method="addItem"> <type>skin_css</type> <name>css/styles.css</name> </action>
+            <action method="addItem"> <type>skin_css</type> <name>css/main_styles.dev.css</name> </action>
+
+        </reference>
+
+        <reference name="header">
+            <!--<block type="samnavigation/checkout_links" name="cartlink" template="page/template/cartlink.phtml" />-->
+
+            <!-- Shopping cart popup -->
+            <block type="checkout/cart_sidebar" name="cart_sidebar" as="topcart"  template="checkout/cart/sidebar.phtml"/>
+
+        </reference>
+        <reference name="top.links">
+            <action method="unsetChild">
+                <name>checkout_cart_link</name>
+            </action>
+        </reference>
+        <reference name="footer">
+            <block type="directory/currency" name="currency_footer" template="directory/currency-footer.phtml"/>
+        </reference>
+        <!--<remove name="breadcrumbs" />-->
+        <remove name="catalog.compare.sidebar"/>
+        <remove name="right.poll"/>
+        <remove name="wishlist_sidebar"/>
+        <remove name="paypal.partner.right.logo"/>
+        <remove name="left.permanent.callout"/>
+        <remove name="right.permanent.callout"/>
+        <remove name="sale.reorder.sidebar"/>
+        <!--<remove name="right.reports.product.viewed"/>-->
+        <!-- Mage_Newsletter -->
+    </default>
+
+
+    <cms_index_index>
+        <reference name="head">
+        </reference>
+        <reference name="content">
+            <block type="core/template" name="home.content" template="page/homepage/index.phtml">
+                <block type="catalog/product_list" name="home.catalog.product.list" alias="products_homepage"
+                       template="page/homepage/homelist.phtml">
+                    <action method="setCategoryId">
+                        <category_id>6</category_id>
+                    </action>
+                    <action method="setData">
+                        <key>products_count</key>
+                        <value>2</value>
+                    </action>
+                    <block type="cms/block" name="product.banner1">
+                        <action method="setBlockId">
+                            <block_id>home-products-banner1</block_id>
+                        </action>
+                    </block>
+                    <block type="cms/block" name="product.banner2">
+                        <action method="setBlockId">
+                            <block_id>home-products-banner2</block_id>
+                        </action>
+                    </block>
+                    <block type="instagram/latest" name="instagram.lastitem" template="instagram/onelatest.phtml"/>
+                </block>
+
+                <block type="instagram/latest" name="home.instagram" template="instagram/home.phtml"/>
+            </block>
+        </reference>
+        <reference name="root">
+            <block type="core/template" name="home.popup" template="page/html/popup.phtml"/>
+        </reference>
+        <reference name="top.links">
+            <action method="unsetChild">
+                <name>checkout_cart_link</name>
+            </action>
+        </reference>
+    </cms_index_index>
+    <!--
+        <customer_account_login>
+            <remove name="breadcrumbs" />
+
+            <reference name="root">
+                <block type="core/template" name="HelloAgain"  template="persistent/customer/form/HelloAgain.phtml" after="header" />
+            </reference>
+        </customer_account_login>
+
+        <catalog_category_default translate="label">
+            <reference name="head">
+                <action method="addItem"><type>skin_js</type><name>js/jquery.formstyler.js</name></action>
+            </reference>
+            <reference name="root">
+                <action method="setTemplate"><template>page/1column.phtml</template></action>
+            </reference>
+            <update handle="SHORTCUT_popup" />
+        </catalog_category_default>
+    -->
+
+    <catalog_category_layered>
+        <reference name="head">
+
+        </reference>
+        <reference name="root">
+            <action method="setTemplate">
+                <template>page/2columns-left.phtml</template>
+            </action>
+        </reference>
+        <reference name="content">
+
+        </reference>
+        <reference name="right">
+            <!--<action method="unsetChild"> <name>cart_sidebar</name> </action>-->
+            <!--<block type="checkout/cart_sidebar" name="cart_sidebar" as="topcart"  template="checkout/cart/sidebar.phtml"/>-->
+            <!--<block type="checkout/cart_sidebar" name="cart_sidebar" as="mini_cart" template="checkout/cart/sidebar.phtml" before="-">-->
+            <!--<action method="insert"><blockName>cart_sidebar</blockName></action>
+            <insert name="cart_sidebar"/>-->
+        </reference>
+    </catalog_category_layered>
+
+</layout>

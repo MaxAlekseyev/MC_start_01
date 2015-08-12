@@ -1,0 +1,19 @@
+@import "../core/_vars";
+@import "../core/_mixins";
+$BLOCK: ".mc-cart";
+
+#{$BLOCK} {
+  @include rem(14);
+  @include border-radius(5px);
+  @include transition();
+
+  display: none;
+  padding: 12px 24px;
+  border: 0;
+  color: #fff;
+  background: #7ea6a4;
+  font-family: $font_voll;
+  &:hover {
+    background: #2e83ac;
+  }
+}

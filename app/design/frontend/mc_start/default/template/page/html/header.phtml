@@ -31,44 +31,7 @@
 <?php // echo $this->getChildHtml('store_language') ?>
 <?php // echo $this->getChildHtml('currency_switcher') ?>
 
-
-<header id="header" class="page-header">
 <?php echo $this->getChildHtml('topcart'); ?>
-        <a class="logo" href="<?php echo $this->getUrl('') ?>">
-            <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" />
-            <img src="<?php echo $this->getLogoSrcSmall() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="small" />
-        </a>
-
-        <!-- Skip Links -->
-
-        <div class="skip-links">
-            <a href="#header-nav" class="skip-link skip-nav">
-                <span class="icon"></span>
-                <span class="label"><?php echo $this->__('Menu'); ?></span>
-            </a>
-
-            <div class="account-cart-wrapper">
-                <a href="<?php echo $this->helper('customer')->getAccountUrl(); ?>" data-target-element="#header-account" class="skip-link skip-account">
-                    <span class="icon"></span>
-                    <span class="label"><?php echo $this->__('Account'); ?></span>
-                </a>
-
-                <!-- Cart -->
-
-                <div class="header-minicart">
-                    <?php echo $this->getChildHtml('minicart_head'); ?>
-                </div>
-            </div>
-
-
-        </div>
-        <!-- Account -->
-        <div id="header-account" class="skip-content">
-            <?php echo $this->getChildHtml('topLinks') ?>
-        </div>
-
-</header>
-
 
   <!-- Header -->
   <header>
@@ -90,8 +53,8 @@
 
       <!-- LOgin links -->
       <ul class="acc-links">
-        <li><a href="#">Create an Account</a></li>
-        <li><a href="#">Sign In</a></li>
+        <li><a href="/customer/account/create/">Create an Account</a></li>
+        <li><a href="/customer/account/login/">Sign In</a></li>
       </ul>
 
       <div class="clear"></div>
@@ -99,7 +62,8 @@
       <!-- Favs + Cart -->
       <ul class="favs-bag">
         <li class="favs"><strong></strong><a href="#"><span><em>Favorites</em> (3)</span></a></li>
-        <li class="bag"><strong></strong><a href="#"><span><em>Shopping Bag</em> (1)</span></a></li>
+        <!-- <li class="bag"><strong></strong><a href="#"><span><em>Shopping Bag</em> (1)</span></a></li> -->
+        <li class="bag"><strong></strong><?php echo $this->getChildHtml('minicart_head'); ?></li>
       </ul>
 
     </section>

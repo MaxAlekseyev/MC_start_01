@@ -2,62 +2,47 @@
 @import "../core/_mixins";
 /* BLOCK */
 
-$BLOCK: '.header-left';
+$BLOCK: ".header-left";
 
 #{$BLOCK}{
-
   float: left;
   width: 28.36%;
   min-width: 340px;
 
   .contact-info{
-
     @include rem(15);
+
     margin: 16px 0 0 2%;
-    line-height: 1.35em;
     margin-bottom: 17px;
+    line-height: 1.4em;
 
     span{
       @include rem(18);
+
       display: inline-block;
-      color: #cfbaa9;
       margin: auto 4px;
+      color: #cfbaa9;
       &.tel{
-        font-weight: 700;
-        color: $brown;
+        @include transition();
+
         margin: auto;
+        color: $brown;
+        font-weight: 700;
       }
     }
   }
 
-  .search{
+  &:hover{
 
-    width: 100%;
-    @include border-radius(10px);
-    @include box-sizing();
-    border: 2px solid #ebe0d8;
-    padding: 3px;
-
+    .contact-info span.tel{
+      color: #2e83ac;
+    }
+    .rounded-input{
+      border-color: #2e83ac;
+    }
     input{
-
-      @include border-radius(7px);
-      @include box-sizing();
-      border: 1px solid #e6d6cd;
-      width: 100%;
-      color: #acacac;
-      font-family: $font_voll;
-      @include rem(14);
-      height: 42px;
-      padding: 13px 15px 13px 34px;
-      background: #fff9f7 url("../images/header/search_lens.png") no-repeat 9px 50%;
-
-      &.focus{
-        color: #636363;
-      }
-
+      border-color: #2e83ac;
     }
-
   }
-
 }
 

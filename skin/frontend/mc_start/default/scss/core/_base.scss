@@ -1,18 +1,19 @@
 @import "_vars";
 @import "_mixins";
+
 /* Basic styles */
 
-html{
+html {
   font-size: $base-font-size;
 }
-body{
-  text-align: center;
-  background: #faf4f2;
+body {
   margin: 0;
-  font: normal normal $base-font-size $base_font;
+  padding: 0 1%;
   border-top: 4px solid $brown;
   color: #636363;
-  padding: 0 1%;
+  background: $body_color;
+  font: normal normal $base-font-size $base_font;
+  text-align: center;
 }
 
 /*-- Fonts --*/
@@ -27,26 +28,26 @@ body{
   Extra-Bold - 800
  */
 
-@font-face{
+@font-face {
   @include font-family(vollkornregular, vollkorn-regular-webfont, 400);
 }
-@font-face{
+@font-face {
   @include font-family(vollkornmedium, vollkorn-regular-webfont, 500);
 }
-@font-face{
+@font-face {
   @include font-family(vollkornsemibold, vollkorn-semibold-webfont, 600);
 }
-@font-face{
+@font-face {
   @include font-family(vollkornbold, vollkorn-bold-webfont, 700);
 }
 
-strong{
+strong {
   font-weight: 700;
 }
-strong.extra{
+strong.extra {
   font-weight: 800;
 }
-strong.medium{
+strong.medium {
   font-weight: 600;
 }
 
@@ -58,42 +59,46 @@ $info: #2b627e;
 $warning: #735d32;
 $error: #a94442;
 
-.alert{
+.alert {
+  @include border-radius();
+
+  margin: 10px;
+  padding: 15px 20px;
+  border-width: 1px;
+  border-style: solid;
   font-size: 2em;
   text-align: left;
-  padding: 15px 20px;
-  border-style: solid;
-  border-width: 1px;
-  @include border-radius();
-  margin: 10px;
 }
-.success{
+.success {
+  border-color: $success;
   color: $success;
   background-color: lighten($success, 50%);
-  border-color: $success;
 }
-.neutral{
+.neutral {
+  border-color: $neutral;
   color: $neutral;
   background-color: lighten($neutral, 60%);
-  border-color: $neutral;
 }
-.info{
+.info {
+  border-color: $info;
   color: $info;
   background-color: lighten($info, 55%);
-  border-color: $info;
 }
-.warning{
+.warning {
+  border-color: $warning;
   color: $warning;
   background-color: lighten($warning, 55%);
-  border-color: $warning;
 }
-.error{
+.error {
+  border-color: $error;
   color: $error;
   background-color: lighten($error, 45%);
-  border-color: $error;
 }
-.wrapper{
+.wrapper {
+  display: inline-block;
+  width: 100%;
   max-width: 1199px;
   margin: 0 auto;
+  background-color: transparent;
   text-align: left;
 }

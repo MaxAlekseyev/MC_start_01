@@ -3,13 +3,12 @@ var j = jQuery.noConflict();
 
 
 j(document).ready(function(){
-
-  j(".header-left input[type=text]").click(function(){
+  j(".rounded-input input[type=text], .rounded-input input[type=search], .rounded-input input[type=email]").click(function(){
     var form_val = j(this).val();
     j(this).val("").addClass("focus");
   });
   
-  j(".header-left input[type=text]").blur(function(){
+  j(".rounded-input input[type=text], .rounded-input input[type=search], .rounded-input input[type=email]").blur(function(){
     var start_val = j(this).attr("value");
     var this_val = j(this).val()
     if(this_val == ""){
@@ -17,5 +16,9 @@ j(document).ready(function(){
       
     }
   });
+  
+  // Dynamic table
+  //var percent = 100/j("ul li").length;
+  //j("ul li").css("width", percent+"%"); 
   
 });

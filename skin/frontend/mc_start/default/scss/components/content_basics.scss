@@ -2,17 +2,15 @@
 @import "../core/_mixins";
 /* BLOCK */
 
-$BLOCK: 'section.content';
+$BLOCK: "section.content";
 
-#{$BLOCK}{
-
+#{$BLOCK} {
   padding-top: 30px;
 
-  &.col1-layout .col-main{
+  &.col1-layout .col-main {
     width: auto;
     margin: 0 1.5%;
   }
-
 }
 
 

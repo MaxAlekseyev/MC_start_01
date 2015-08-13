@@ -1,0 +1,55 @@
+@import "../core/_vars";
+@import "../core/_mixins";
+$BLOCK: '.catalog-category-view';
+
+/* Header */
+
+#{$BLOCK}{
+  .col-main{
+    margin-top: -10px;
+    .page-title h1{
+      margin-bottom: 12px;
+    }
+    padding-bottom: 20px;
+  }
+  h1{
+    border: 0;
+  }
+  .category-image{
+    padding: 0;
+    border: 0;
+    img{
+      @include border-radius(10px);
+      //border: 1px solid $light_brown;
+      border: 1px solid $light_brown;
+
+    }
+  }
+
+  .toolbar{
+    background-color: transparent;
+    border-color: $light_brown;
+    label{
+      text-transform: none;
+      font-family: $font_voll;
+      @include rem(14);
+      //font-weight: 600;
+      color: #636363;
+    }
+    select {
+      padding: 0 auto;
+      @include box-sizing();
+      height: 30px;
+    }
+    .view-mode .grid{
+      margin-right: 0;
+    }
+
+  }
+
+}
+
+
+
+
+

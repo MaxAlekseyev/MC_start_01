@@ -1,103 +1,100 @@
 @import "../core/_vars";
 @import "../core/_mixins";
-$BLOCK: '.main-nav';
+$BLOCK: ".main-nav";
 
-#{$BLOCK}{
-
-  border-bottom: 1px solid $light_brown;
+#{$BLOCK} {
   //display: inline-block;
   display: table;
   width: 100%;
+  border-bottom: 1px solid $light_brown;
 
-  & > ul{
-    //float: left;
-    width: 100%;
+  & > ul {
     //display: table;
     display: table-row;
+    //float: left;
+    width: 100%;
 
-    & > li{
-      text-align: center;
+    & > li {
       //width: calc(100% / 6);
       //float: left;
       display: table-cell;
       position: relative;
-    li{
-      position: relative;
-      &.level0.parent{
-        ul{
-          display: none;
-          left: 90%;
-          right: 0;
-          margin-top: -20px;
-        }
-        &:hover{
-          ul{
-            display: block;
+      text-align: center;
+      li {
+        position: relative;
+        &.level0.parent {
+          ul {
+            display: none;
+            right: 0;
+            left: 90%;
+            margin-top: -20px;
+          }
+          &:hover {
+            ul {
+              display: block;
+            }
           }
         }
       }
-    }
 
       /* Popup*/
 
-      ul{
-        display: none;
-        position: absolute;
-        z-index: 10;
-        background: #fff;
-        left: 25px;
-        margin-top: -5px;
-        min-width: 190px;
-        border: 1px solid darken($body_color, 10%);
+      ul {
         @include box-shadow(1px 1px 0 0 rgba(0,0,0,0.3));
 
-        li{
+        display: none;
+        position: absolute;
+        left: 25px;
+        z-index: 10;
+        min-width: 190px;
+        margin-top: -5px;
+        border: 1px solid darken($body_color, 10%);
+        background: #fff;
+
+        li {
           width: 100%;
           border-bottom: 1px solid darken($body_color, 10%);
-          &:last-child{
+          &:last-child {
             border: 0;
           }
         }
-        a{
+        a {
           display: block;
-          text-transform: capitalize;
           padding: 7px 30px 7px 11px;
+          background: lighten($body_color, 2%);
           text-align: left;
           white-space: nowrap;
-          background: lighten($body_color, 2%);
-          &:hover{
-            color: #000000;
+          text-transform: capitalize;
+          &:hover {
+            color: #000;
             background: darken($body_color, 3%);
           }
         }
-
       }
 
-      a{
-
-        color: #636363;
-        text-decoration: none;
-        display: inline-block;
+      a {
         @include rem(15);
-        text-transform: uppercase;
-        padding: 12px 0 13px;
-        font-family: $font_fan;
-        word-spacing: 3px;
 
-        &:hover{
+        display: inline-block;
+        padding: 12px 0 13px;
+        color: #636363;
+        font-family: $font_fan;
+        text-decoration: none;
+        word-spacing: 3px;
+        text-transform: uppercase;
+
+        &:hover {
           color: #111;
         }
-
       }
-      &.menu > a{
-        background: url("#{$img}/header/favs_arr.gif") no-repeat 100% 40%;
+      &.menu > a {
         padding-right: 16px;
+        background: url("#{$img}/header/favs_arr.gif") no-repeat 100% 40%;
       }
-      &:hover ul{
+      &:hover ul {
         display: block;
       }
     }
   }
-
 }
 

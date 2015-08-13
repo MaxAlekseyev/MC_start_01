@@ -1,25 +1,21 @@
 @import "../core/_vars";
 @import "../core/_mixins";
+$BLOCK: ".mc-cart";
 
-$BLOCK: '.mc-cart';
-
-#{$BLOCK}{
-
-  display: none;
-  background: #7ea6a4;
-  color: #ffffff;
+#{$BLOCK} {
+  //color: #ffffff;
   @include rem(14);
   @include border-radius(5px);
-  font-family: $font_voll;
-  padding: 12px 24px;
-  border: 0;
+  //border: 0;
   @include transition();
+
+  display: none;
   position: absolute;
   z-index: 15;
-
-  &:hover{
-    background: #2e83ac;
-  }
-
+  padding: 12px 24px;
+  border: 1px solid #ecd5cd;
+  background: #fff;
+  box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.3);
+  font-family: $font_voll;
 }
 

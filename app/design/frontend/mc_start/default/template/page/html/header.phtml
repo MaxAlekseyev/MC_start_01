@@ -31,8 +31,8 @@
 <?php // echo $this->getChildHtml('store_language') ?>
 <?php // echo $this->getChildHtml('currency_switcher') ?>
 
-<?php echo $this->getChildHtml('topcart'); ?>
 
+<?php // echo $this->getChildHtml('topcart'); ?>
   <!-- Header -->
   <header>
     <!-- Header left block-->
@@ -61,9 +61,13 @@
 
       <!-- Favs + Cart -->
       <ul class="favs-bag">
-        <li class="favs"><strong></strong><a href="#"><span><em>Favorites</em> (3)</span></a></li>
+        <li class="favs"><strong></strong><a href="#" class="cart-button"><span><em>Favorites</em> (3)</span></a></li>
         <!-- <li class="bag"><strong></strong><a href="#"><span><em>Shopping Bag</em> (1)</span></a></li> -->
-        <li class="bag"><strong></strong><?php echo $this->getChildHtml('minicart_head'); ?></li>
+        <li class="bag">
+          <strong></strong>
+          <?php echo $this->getChildHtml('minicart_head'); ?>
+          <?php echo $this->getChildHtml('topcart'); ?>
+        </li>
       </ul>
 
     </section>

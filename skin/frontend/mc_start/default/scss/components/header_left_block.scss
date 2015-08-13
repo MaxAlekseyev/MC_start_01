@@ -4,25 +4,25 @@
 
 $BLOCK: ".header-left";
 
-#{$BLOCK}{
+#{$BLOCK} {
   float: left;
   width: 28.36%;
   min-width: 340px;
 
-  .contact-info{
+  .contact-info {
     @include rem(15);
 
     margin: 16px 0 0 2%;
     margin-bottom: 17px;
     line-height: 1.4em;
 
-    span{
+    span {
       @include rem(18);
 
       display: inline-block;
       margin: auto 4px;
       color: #cfbaa9;
-      &.tel{
+      &.tel {
         @include transition();
 
         margin: auto;
@@ -32,15 +32,14 @@ $BLOCK: ".header-left";
     }
   }
 
-  &:hover{
-
-    .contact-info span.tel{
+  &:hover {
+    .contact-info span.tel {
       color: #2e83ac;
     }
-    .rounded-input{
+    .rounded-input {
       border-color: #2e83ac;
     }
-    input{
+    input {
       border-color: #2e83ac;
     }
   }

@@ -17,8 +17,21 @@ j(document).ready(function(){
     }
   });
   
-  // Dynamic table
-  //var percent = 100/j("ul li").length;
-  //j("ul li").css("width", percent+"%"); 
+  j(".configurable-swatch-list li, .configurable-swatch-list .swatch-label").removeAttr("style");  
+  j(".configurable-swatch-list .has-image img").removeAttr("height").removeAttr("width");  
+  
+  j(".bag").hover(function(){
+    //j(".mc-cart").fadeIn(1500);
+    //setTimeout(function(){
+      //j(".mc-cart").fadeOut(500);
+    //}, 1000);
+  },
+  function(){
+    //j(".mc-cart").fadeOut(500);
+  }
+  );
+  
+  
+  //j(".configurable-swatch-list .li, .configurable-swatch-list .has-image img").removeAttr("style");  
   
 });

@@ -129,6 +129,7 @@ $installer->setConfigData('general/store_information/name', 'Lang Antiques');
 $installer->setConfigData('general/store_information/address', '309 Sutter St. San Francisco');
 $installer->setConfigData('general/store_information/phone', '(800) 924 - 2213');
 $installer->setConfigData('design/footer/copyright', '&copy; 2001-2015 Lang Antiques, All Rights Reserved.');
+$installer->setConfigData('general/store_information/hours', 'Mon-Sat 10:30-5:30');
 $installer->setConfigData('design/header/logo_src', 'images/header/logo_big.png');
 //$installer->setConfigData('VAR', 'VAL');
 

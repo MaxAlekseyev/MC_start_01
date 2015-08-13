@@ -295,10 +295,6 @@ header .logo img {
   transition: all 0.2s ease-in-out;
 }
 
-#header {
-  display: none;
-}
-
 .clearfix, header, .footer-right-block, .header-right .acc-links {
   *zoom: 1;
 }

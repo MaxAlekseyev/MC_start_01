@@ -13,7 +13,7 @@
 /app/etc/local.xml
 /errors/local.xml
 /media
-/var/*
+/var
 /google*.html
 /downloader/.cache/*
 /downloader/cache.cfg
@@ -21,6 +21,15 @@
 /includes/src/*
 /affiliates
 /working
+
+#  Temporary ignored
+/app/design/frontend/base
+/app/design/frontend/rwd
+/app/design/frontend/default
+/skin/frontend/base
+/skin/frontend/rwd
+/skin/frontend/default
+
 
 # Files
 *.psd

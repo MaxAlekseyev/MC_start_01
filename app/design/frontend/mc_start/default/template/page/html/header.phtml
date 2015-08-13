@@ -1,0 +1,115 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+/**
+ * @var Mage_Page_Block_Html_Header $this
+ */
+?>
+
+<?php // echo $this->getChildHtml('store_language') ?>
+<?php // echo $this->getChildHtml('currency_switcher') ?>
+
+
+<?php // echo $this->getChildHtml('topcart'); ?>
+  <!-- Header -->
+  <header>
+    <!-- Header left block-->
+    <section class="header-left">
+
+      <div class="contact-info">
+        Call us at  <span class="tel"><?php echo Mage::getStoreConfig('general/store_information/phone'); ?></span><br>
+        <?php echo Mage::getStoreConfig('general/store_information/address'); ?>  <span>&bull;</span>  <?php echo Mage::getStoreConfig('general/store_information/hours'); ?>
+      </div>
+
+      <!-- Search -->
+      <?php echo $this->getChildHtml('topSearch') ?>
+
+    </section>
+
+    <!-- Header right block -->
+    <section class="header-right">
+
+      <!-- LOgin links -->
+      <ul class="acc-links">
+        <li><a href="/customer/account/create/">Create an Account</a></li>
+        <li><a href="/customer/account/login/">Sign In</a></li>
+      </ul>
+
+      <div class="clear"></div>
+
+      <!-- Favs + Cart -->
+      <ul class="favs-bag">
+        <li class="favs"><strong></strong><a href="#" class="cart-button"><span><em>Favorites</em> (3)</span></a></li>
+        <!-- <li class="bag"><strong></strong><a href="#"><span><em>Shopping Bag</em> (1)</span></a></li> -->
+        <li class="bag">
+          <strong></strong>
+          <?php echo $this->getChildHtml('minicart_head'); ?>
+          <?php echo $this->getChildHtml('topcart'); ?>
+        </li>
+      </ul>
+
+    </section>
+
+    <!-- Logo -->
+    <a href="/" class="logo">
+    <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" alt="<?php echo Mage::getStoreConfig('general/store_information/name'); ?>" />
+      <!-- <img src="<?php echo $this->getSkinUrl('') ?>images/header/logo_big.png" alt="Lang"> -->
+    </a>
+
+  </header>
+  <!-- /Header -->
+
+  <!-- Main nav -->
+  <nav class="main-nav">
+    <ul>
+      <li class="menu">
+        <a href="">Engagement</a>
+
+        <!-- Popup -->
+        <ul>
+          <li><a href="#">Mehmet Topal</a></li>
+          <li><a href="#">Athletes suspended after</a></li>
+          <li><a href="#">Fenerbahce supporter</a></li>
+          <li><a href="#">had been driving</a></li>
+          <li><a href="#">condemned </a></li>
+        </ul>
+
+      </li>
+      <li class="menu">
+        <a href="">Shop For Jewelry</a>
+
+        <!-- catagories-->
+        <?php echo $this->getChildHtml('topMenu') ?>
+
+        </li>
+      <li><a href="">Selling Your Jewelry</a></li>
+      <li><a href="">Lang Social Club</a></li>
+      <li><a href="">Knowledge</a></li>
+      <li><a href="">About Us</a></li>
+    </ul>
+  </nav>
+
+
+<?php echo $this->getChildHtml('topContainer'); ?>

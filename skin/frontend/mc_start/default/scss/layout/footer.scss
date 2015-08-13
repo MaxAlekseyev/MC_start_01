@@ -1,9 +1,111 @@
 @import "../core/_vars";
 @import "../core/_mixins";
-
-$BLOCK: 'BLOCKNAME';
+$BLOCK: 'footer';
 
 #{$BLOCK}{
 
-}
+  border-top: 1px solid $light_brown;
+  padding-top: 15px;
+  margin-bottom: 12px;
 
+  .wrapper{
+    padding-bottom: 45px;
+    border-bottom: 1px solid $light_brown;
+  }
+
+  .footer-links{
+
+    width: 67%;
+
+    & > li{
+      float: left;
+      width: 18%;
+      margin-right: 7%;
+      &:hover{
+        h3{
+          border-color: #2e83ac;
+          color: #000;
+        }
+      }
+    }
+    & ul{
+    }
+    & li li{
+      @include rem(14);
+      margin-bottom: 6px;
+
+    }
+    a{
+
+      color: #636363;
+      display: block;
+      text-decoration: none;;
+
+      &:hover{
+        color: #000;
+      }
+
+    }
+  }
+  h3{
+    color: #636363;
+    text-transform: uppercase;
+    border-bottom: 1px solid $light_brown;
+    padding-bottom: 5px;
+    padding-left: 3px;
+    font-family: $font_fan;
+    margin-bottom: 5px;
+    @include rem(14);
+    @include transition();
+  }
+
+}
+.footer-right-block{
+  float: right;
+  width: 32.1%;
+  @extend .clearfix;
+
+  h3{
+    border: 0;
+    margin-bottom: 2px;
+  }
+  .subscribe-me{
+    input{
+      padding-left: 15px;
+    }
+    .btn{
+      float: left;
+      position: relative;
+      top: 3px;
+    }
+    &:hover{
+      .rounded-input, .rounded-input *{
+        border-color: #2e83ac;
+      }
+      .btn{
+        background: #2e83ac;
+      }
+      h3{
+        //color: #1d5974;
+        color: #000;
+      }
+    }
+  }
+  .rounded-input{
+    width: 279px;
+    float: left;
+    margin-right: 8px;
+    input{
+      background-image: none;
+    }
+  }
+}
+.copyright{
+  margin-bottom: 20px;
+  text-align: center;
+  @include rem(13);
+  color: #898989;
+  &:hover{
+    color: #2e83ac;
+  }
+}

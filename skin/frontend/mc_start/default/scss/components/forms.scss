@@ -1,0 +1,50 @@
+@import "../core/_vars";
+@import "../core/_mixins";
+/* BLOCK */
+
+$BLOCK: "form";
+
+
+.rounded-input {
+  @include border-radius(10px);
+  @include box-sizing();
+  @include transition();
+
+  width: 100%;
+  padding: 3px;
+  border: 2px solid #ebe0d8;
+
+  //input, #search{
+  input {
+    @include border-radius(7px);
+    @include box-sizing();
+    @include rem(14);
+    @include transition();
+
+    width: 100%;
+    height: 42px;
+    padding: 13px 15px 13px 34px;
+    border: 1px solid #e6d6cd;
+    color: #acacac;
+    background: #fff9f7 url("#{$img}/header/search_lens.png") no-repeat 9px 50%;
+    font-family: $font_voll;
+
+    &.focus {
+      color: #636363;
+    }
+  }
+  &:hover {
+    border-color: #2e83ac;
+    input {
+      border-color: #2e83ac;
+    }
+  }
+  label {
+    display: none;
+  }
+}
+#search {
+  font-family: $font_voll;
+}
+
+

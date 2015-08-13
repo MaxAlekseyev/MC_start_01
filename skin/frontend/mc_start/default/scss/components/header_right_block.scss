@@ -1,0 +1,121 @@
+@import "../core/_vars";
+@import "../core/_mixins";
+/* BLOCK */
+
+$BLOCK: ".header-right";
+
+#{$BLOCK} {
+  float: right;
+  width: 30%;
+  min-width: 360px;
+
+  .acc-links {
+    @extend .clearfix;
+
+    float: right;
+    margin-bottom: 45px;
+    padding-top: 10px;
+
+    a {
+      @include rem(14);
+    }
+    li {
+      float: left;
+      &:first-child {
+        margin-right: 10px;
+        padding-right: 10px;
+        border-right: 1px solid #e4d6cd;
+      }
+    }
+  }
+  .favs-bag {
+    float: right;
+
+    li {
+      float: left;
+      position: relative;
+
+      &:first-child {
+        margin-right: 20px;
+      }
+      & > strong {
+        @include transition();
+
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 20;
+        width: 43px;
+        height: 43px;
+        opacity: 0;
+      }
+      &:hover {
+        strong {
+          opacity: 1;
+        }
+        span {
+          border-color: #338fb9;
+        }
+      }
+    }
+    a.cart-button {
+      @include rem(15);
+      @include box-sizing();
+
+      height: 43px;
+      padding-top: 5px;
+      padding-left: 56px;
+      span {
+        @include transition();
+
+        display: block;
+        padding: 6px 17px 8px 0;
+        border-top: 1px solid #e3d3c7;
+        border-bottom: 1px solid #e3d3c7;
+        background: url("#{$img}/header/favs_arr.gif") no-repeat 100% 50%;
+      }
+    }
+    em {
+      font-style: normal;
+    }
+  }
+  .favs {
+    strong {
+      background: url("#{$img}/header/right_block_icons_07.gif") no-repeat 0 -100px;
+    }
+
+    a {
+      background: url("#{$img}/header/right_block_icons_07.gif") no-repeat 0 0;
+      &:hover {
+        //background-position: 0 -100px;
+      }
+    }
+  }
+  .bag {
+    position: relative;
+    & > strong {
+      background: url("#{$img}/header/right_block_icons_07.gif") no-repeat 0 -300px;
+    }
+    a.cart-button {
+      background: url("#{$img}/header/right_block_icons_07.gif") no-repeat 0 -200px;
+      &:hover {
+        //background-position: 0 -300px;
+      }
+    }
+    &:hover {
+      .mc-cart {
+        display: block;
+      }
+    }
+  }
+
+  a {
+    display: block;
+    color: #636363;
+    text-decoration: none;
+    &:hover {
+      color: #000;
+    }
+  }
+}

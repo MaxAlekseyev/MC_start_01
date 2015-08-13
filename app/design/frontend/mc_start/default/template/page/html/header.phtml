@@ -106,7 +106,8 @@
 
     <!-- Logo -->
     <a href="/" class="logo">
-      <img src="<?php echo $this->getSkinUrl('') ?>images/header/logo_big.png" alt="Lang">
+    <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" alt="<?php echo Mage::getStoreConfig('general/store_information/name'); ?>" />
+      <!-- <img src="<?php echo $this->getSkinUrl('') ?>images/header/logo_big.png" alt="Lang"> -->
     </a>
 
   </header>

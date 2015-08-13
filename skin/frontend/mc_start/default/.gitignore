@@ -2,7 +2,9 @@ images/tmp
 template-max.html
 template-min.html
 sass/core/_mixins.bak
-css/*
+#css/*
+npm_modules/
+tmp/
 npm-debug.log
 index_01.html
 #package.json

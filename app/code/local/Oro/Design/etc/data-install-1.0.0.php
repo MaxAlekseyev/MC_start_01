@@ -1,3 +1,4 @@
+//Static blocks
 $collection = Mage::getResourceModel('cms/block_collection');
 $collection->addFieldToFilter('identifier', 'home_bottom_text');
 foreach ($collection as $block) {
@@ -87,10 +88,6 @@ $cmsBlocks = array(
         'stores'        => 0
     ),
 
-
-
-
-
 );
 
 foreach ($cmsBlocks as $data) {
@@ -98,3 +95,38 @@ foreach ($cmsBlocks as $data) {
     $staticBlock = Mage::getModel('cms/block')->setData($data);
     $staticBlock->save();
 }
+
+// CMS Pages
+
+/**
+ * ========== Homepage static ===========
+ */
+ 
+$page = Mage::getModel('cms/page');
+$page->load('home');
+if (!$page->getId()) {
+    $page->setIdentifier('home');
+}
+$page->setTitle('Antique & Vintage Jewelry');
+$page->setIsActive(1);
+$page->setStores(array(0));
+$page->setRootTemplate('two_columns_left_bar');
+
+$content    = <<<HTML
+{{block type="core/template" template="page/html/homepage.phtml"}}
+HTML;
+
+$page->setContent($content);
+$page->save();
+
+
+/**
+ * ========== Admin data variables ===========
+ */
+ 
+$installer = $this;
+$installer->setConfigData('general/store_information/name', 'Lang Antiques');
+$installer->setConfigData('general/store_information/address', '309 Sutter St. San Francisco');
+$installer->setConfigData('general/store_information/phone', '(800) 924 - 2213');
+$installer->setConfigData('design/footer/copyright', '&copy; 2001-2015 Lang Antiques, All Rights Reserved.');
+//$installer->setConfigData('VAR', 'VAL');

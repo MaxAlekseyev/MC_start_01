@@ -14,5 +14,8 @@ $BLOCK: ".btn";
   font-family: $font_voll;
   &:hover {
     background: #2e83ac;
+    text-decoration: none;
+    color: #fff;
+
   }
 }

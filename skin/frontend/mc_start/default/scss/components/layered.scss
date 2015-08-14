@@ -1,0 +1,137 @@
+@import "../core/_vars";
+@import "../core/_mixins";
+$BLOCK: ".block.block-layered-nav";
+$BODY: ".catalog-category-view";
+/* Layered nav */
+
+#{$BLOCK} {
+  @include border-radius(10px);
+
+  padding: 0 21px 20px 18px;
+  border: 1px solid $light_brown;
+  background: #fff9f7;
+
+  .block-title {
+    display: none;
+  }
+
+  .odd, .even {
+    border: 0;
+  }
+  //.odd:first-child, .even + .odd, .even:first-child, .odd + .even{
+  dt.even, dt.odd {
+    @include rem(14);
+
+    margin-bottom: 3px;
+    padding: 7px 0;
+    border-bottom: 1px solid $light_brown;
+    color: #636363;
+    background: none;
+    font-family: $font_fan;
+    text-transform: uppercase;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+  dd.even, dd.odd {
+    padding: 10px 10px 15px 0;
+    border-top: 1px solid $light_brown;
+  }
+  dd.even ol a, dd.odd ol a {
+    @include rem(14);
+
+    padding: 5px 0;
+    color: #555;
+    font-family: $font_voll;
+    .count {
+      @include rem(14);
+
+      display: inline-block;
+      margin-left: 3px;
+      color: #ac572e;
+    }
+    &:hover .count {
+      color: #000 !important;
+    }
+    &:hover {
+      color: #000;
+      text-decoration: none;
+    }
+  }
+  dl {
+    padding-top: 10px;
+  }
+}
+#narrow-by-list dd .configurable-swatch-list {
+  margin-bottom: 10px;
+  margin-left: auto;
+}
+#narrow-by-list dd .configurable-swatch-list li {
+  margin-left: 0;
+  line-height: auto !important;
+  .swatch-link.has-image {
+    .swatch-label {
+      display: inline-block;
+      width: 19px;
+      height: 19px;
+      padding: 0;
+      border: 0;
+      img {
+        @include border-radius(4px);
+
+        width: 100% !important;
+        height: 100% !important;
+        //border: 1px solid lighten($brown, 100%);
+        border: 1px solid #999;
+        &:hover {
+          border-color: #555;
+          //border-color: #2e83ac;
+        }
+      }
+    }
+  }
+  a {
+    padding: 15px 0 0 0;
+  }
+  .count {
+    @include rem(14);
+
+    display: inline-block;
+    position: relative;
+    top: 1px;
+    margin-left: 3px;
+    color: #ac572e;
+  }
+  .swatch-label {
+    @include box-sizing();
+
+    width: 30px;
+    padding: 3px 5px;
+    border: 1px solid lighten($brown, 35%);
+    color: #555;
+    &:hover {
+      border-color: #2e83ac;
+      color: #000;
+    }
+  }
+}
+
+#{$BODY} {
+  .col-left {
+    @include box-sizing();
+
+    width: 18.4%;
+    margin-right: 2.5%;
+    padding: 36px 0 20px 0;
+    background: url("../images/catalog/layered_nav_bg.gif") no-repeat 50% 0;
+  }
+  .col-main {
+    width: 79.1%;
+    & + .col-left {
+      display: none;
+    }
+  }
+}
+
+
+

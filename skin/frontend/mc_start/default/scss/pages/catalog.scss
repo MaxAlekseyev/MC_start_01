@@ -1,0 +1,149 @@
+@import "../core/_vars";
+@import "../core/_mixins";
+$BLOCK: '.catalog-category-view';
+
+/* Header */
+
+#{$BLOCK}{
+  .col-main{
+    margin-top: -10px;
+    .page-title h1{
+      margin-bottom: 12px;
+    }
+    padding-bottom: 20px;
+  }
+  h1{
+    border: 0;
+  }
+  .category-image{
+    padding: 0;
+    border: 0;
+    img{
+      @include border-radius(10px);
+      //border: 1px solid $light_brown;
+      border: 1px solid $light_brown;
+
+    }
+  }
+
+  .toolbar{
+    background-color: transparent;
+    border-color: $light_brown;
+    label{
+      text-transform: none;
+      font-family: $font_voll;
+      @include rem(14);
+      //font-weight: 600;
+      color: #636363;
+    }
+    select{
+      padding: 0 auto;
+      @include box-sizing();
+      height: 30px;
+    }
+    .view-mode .grid{
+      margin-right: 0;
+    }
+
+  }
+
+}
+.products-list{
+
+  & > li .product-image{
+    width: 25%;
+    max-height: 180px;
+    overflow: hidden;
+    border: 1px solid $light_brown;
+    @include border-radius(10px);
+    &:hover{
+      border-color: $this_blue;
+    }
+    img{
+      &:hover{
+      }
+    }
+  }
+
+  .product-shop{
+    padding-left: 2%;
+    width: 75%;
+    @include box-sizing();
+
+    .product-primary{
+      float: none;
+      width: 100%;
+      .ratings{
+        display: none;
+      }
+      .configurable-swatch-list{
+        margin-bottom: 15px;
+      }
+    }
+    .product-secondary{
+      text-align: left;
+      float: none;
+      width: 100%;
+    }
+    .desc{
+      float: none;
+      width: 100%;
+      padding-top: 17px;
+      margin-bottom: 10px;
+      @include rem(14);
+      a{
+        color: $brown;
+      }
+    }
+    .product-name{
+      font-family: $font_voll;
+      @include rem(18);
+      margin-bottom: 5px;
+      a{
+        color: $grey_text;
+        @include transition();
+      }
+      a:hover{
+        color: $this_blue;
+      }
+    }
+  }
+
+  .price-box .price, .price{
+    color: $brown;
+    @include rem(18);
+    font-family: $font_voll;
+  }
+  .add-to-links{
+
+    width: 100%;
+    float: left;
+    margin: 0 0 7px;
+
+    li{
+
+      float: left;
+      display: inline-block;
+
+      a{
+        @include rem(13);
+        color: $brown;
+        display: block;
+        margin-right: 10px;
+      }
+    }
+  }
+  .double-line{
+    border-top: 1px solid $light_brown;
+    border-bottom: 1px solid $light_brown;
+    height: 4px;
+    float: left;
+    width: 100%;
+
+  }
+
+}
+
+
+
+
